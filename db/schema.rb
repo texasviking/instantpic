@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160609204325) do
 
-  create_table "cats", force: :cascade do |t|
-    t.string   "name"
-    t.string   "cat_type"
-    t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "media", force: :cascade do |t|
     t.string   "media_url"
     t.string   "location"
