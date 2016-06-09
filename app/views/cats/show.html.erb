@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cat.name %>
+</p>
+
+<p>
+  <strong>Cat type:</strong>
+  <%= @cat.cat_type %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @cat.image_url %>
+</p>
+<p>
+  <img width="200" src="<%= @cat.image_url %>" />
+</p>
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>

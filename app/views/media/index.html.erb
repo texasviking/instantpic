@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-right">
+        <a href="<%= new_medium_path %>"> 
+          <img src="https://cdn4.iconfinder.com/data/icons/miu/24/circle-add-plus-new-outline-stroke-128.png" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% counter = 0 %>
+    
+    <% @media.reverse.each do |medium| %>
+    <div class="col-md-4">
+      <a href="<%= medium_path(medium) %>">
+        <div class="center-cropped"
+             style="background-image: url('<%= medium.media_url %>');">
+        </div>
+      </a>
+    </div>
+    
+      <% counter = counter + 1 %>
+      
+      <% if counter == 3 %>
+      <%    counter = 0 %>
+        </div>
+        <div class="row">
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>
+
+<%= link_to 'New Medium', new_medium_path %>

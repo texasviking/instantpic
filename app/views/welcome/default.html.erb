@@ -1,0 +1,18 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Type</th>
+			<th>Image</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @dogs.each do |d| %>
+		<tr>
+			<td><%= d.name %></td>
+			<td><%= d.type %></td>
+			<td><img width="200" src="<%= d.image_url %>" /></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
