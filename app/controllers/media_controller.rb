@@ -1,5 +1,5 @@
 class MediaController < ApplicationController
-  before_action :set_medium, only: [:show, :edit, :update, :destroy]
+  before_action :set_medium, only: [:show, :edit, :update, :destroy, :like]
 
   # GET /media
   # GET /media.json
@@ -59,6 +59,12 @@ class MediaController < ApplicationController
       format.html { redirect_to media_url, notice: 'Medium was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def like
+    @medium.likes = @medium.likes + 1
+    @medium.save
+    redirect_to medium_path(@medium)
   end
 
   private

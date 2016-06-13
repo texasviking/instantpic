@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Media url:</strong>
-  <%= @medium.media_url %>
+  <strong>Media:</strong>
+  <img width="200" src="<%= @medium.media_url %>" />
 </p>
 
 <p>
@@ -10,5 +10,11 @@
   <%= @medium.location %>
 </p>
 
+<p>
+  <strong>Likes:</strong>
+  <%= @medium.likes %>
+</p>
+
+<%= link_to 'Like', like_medium_path(@medium) %> |
 <%= link_to 'Edit', edit_medium_path(@medium) %> |
 <%= link_to 'Back', media_path %>
